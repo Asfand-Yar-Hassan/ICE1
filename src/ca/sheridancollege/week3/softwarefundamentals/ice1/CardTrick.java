@@ -21,13 +21,31 @@ public class CardTrick {
             magicHand[i]=c;
         }
 
-        //insert code to ask the user for Card value and suit, create their card
-       Scanner input=new Scanner(System.in);
-        System.out.println("Enter card value");
-       c.setValue(input.next());
+        
+//insert code to ask the user for Card value and suit, create their card
+       Card card=new Card();
+       boolean found=false;
        
-        // and search magicHand here
+       Scanner input=new Scanner(System.in);
+        System.out.println("Enter card value:");
+       int val=input.nextInt();
+       System.out.println("Enter suit:");
+       String suit=input.next();
+       card.setValue(val);
+       card.setSuit(suit);
+       
+       // and search magicHand here
+        for(int i=0;i<magicHand.length;i++){
+        if (magicHand[i].getValue()==card.getValue()&&magicHand[i].getSuit()==card.getSuit())
+        found= true;
+        else found=false;
+        }
+        
+
         //Then report the result here
+        if(found=true)
+            System.out.println("Card is in the magic hand!");
+        else System.out.println("Card is not in the magic hand!");
     }
 
 }
