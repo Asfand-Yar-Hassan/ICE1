@@ -22,6 +22,9 @@ public class CardTrick {
         }
 
         //insert code to ask the user for Card value and suit, create their card
+       Scanner input=new Scanner(System.in);
+        System.out.println("Enter card value");
+       c.setValue(input.next());
        
         // and search magicHand here
         //Then report the result here
